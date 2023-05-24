@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta lang="en">
+    <script>
+
+        let computerChoice = (Math.floor(Math.random() * 3));
+
+        function getComputerChoice(){
+            if (computerChoice === 0) {
+                return "rock"
+            } else if (computerChoice === 1) {
+                return "paper"
+            } else {
+                return "scissors"
+            }
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (computerSelection.toLowerCase() === playerSelection.toLowerCase()) {
+                return "Draw! " + computerSelection + " vs " + playerSelection 
+            } else if (playerSelection.toLowerCase() === "rock"){
+                if(computerSelection === "paper"){
+                    return "You lose! " + computerSelection + " beats " +playerSelection
+                } else if (computerSelection === "scissors") {
+                    return "You win! " + playerSelection + " beats " + computerSelection 
+                } else {
+                    return null
+                }
+            } else if (playerSelection.toLowerCase() === "paper"){
+                if(computerSelection === "scissors"){
+                    return "You lose! " + computerSelection + " beats " + playerSelection
+                } else if (computerSelection === "rock") {
+                    return "You win! " + playerSelection + " beats " + computerSelection 
+                } else {
+                    return null
+                }
+            } else if (playerSelection.toLowerCase() === "scissors"){
+                if(computerSelection === "rock"){
+                    return "You lose! " + computerSelection + " beats " + playerSelection
+                } else if (computerSelection === "paper") {
+                    return "You win! " + playerSelection + " beats " + computerSelection 
+                } else {
+                    return null
+                }
+        }
+    }
+
+        const playerSelection = "scissors"
+        const computerSelection = getComputerChoice();
+
+        console.log(playRound(playerSelection, computerSelection))
+    </script>
+</head>
+<body>
+
+</body>
+</html>
