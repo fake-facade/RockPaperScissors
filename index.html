@@ -2,66 +2,23 @@
 <html>
 <head>
     <meta lang="en">
-    <script>
-
-        let computerChoice = (Math.floor(Math.random() * 3));
-
-        function getComputerChoice(){
-            if (computerChoice === 0) {
-                return "rock"
-            } else if (computerChoice === 1) {
-                return "paper"
-            } else {
-                return "scissors"
-            }
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            if (computerSelection.toLowerCase() === playerSelection.toLowerCase()) {
-                return "Draw! " + computerSelection + " vs " + playerSelection 
-            } else if (playerSelection.toLowerCase() === "rock"){
-                if(computerSelection === "paper"){
-                    return "You lose! " + computerSelection + " beats " +playerSelection
-                } else if (computerSelection === "scissors") {
-                    return "You win! " + playerSelection + " beats " + computerSelection 
-                } else {
-                    return null
-                }
-            } else if (playerSelection.toLowerCase() === "paper"){
-                if(computerSelection === "scissors"){
-                    return "You lose! " + computerSelection + " beats " + playerSelection
-                } else if (computerSelection === "rock") {
-                    return "You win! " + playerSelection + " beats " + computerSelection 
-                } else {
-                    return null
-                }
-            } else if (playerSelection.toLowerCase() === "scissors"){
-                if(computerSelection === "rock"){
-                    return "You lose! " + computerSelection + " beats " + playerSelection
-                } else if (computerSelection === "paper") {
-                    return "You win! " + playerSelection + " beats " + computerSelection 
-                } else {
-                    return null
-                }
-        }
-    }
-
-        
-        const computerSelection = getComputerChoice();
-
-
-
-        function game(){
-            for(let i=0; i < 10; i++) {
-            let playerSelection = prompt("Rock, Paper, or Scissors?")
-            console.log(playRound(playerSelection, computerSelection))
-        }
-    }
-
-    game()
-    </script>
 </head>
 <body>
+    <div class = "container">
+        <div class = "topBar">
+            <h1>Rock, Paper, Scissors</h1>
+            <p>Select an option and play against the computer.</p>
+        </div>
+        <div class="buttons">
+            <button name="rock">Rock</button>
+            <button name="paper">Paper</button>
+            <button name="scissors">Scissors</button>
+        </div>
+        <div class="result">
 
+        </div>
+
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
